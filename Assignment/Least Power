@@ -9,6 +9,6 @@ int Power(int n){
 int main() {
     int n;
     scanf("%d",&n);
-    printf("%d %d",Power(n));   
+    printf("%d",Power(n));   
     return 0;
 }
