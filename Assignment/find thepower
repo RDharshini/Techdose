@@ -1,0 +1,18 @@
+#include <stdio.h>
+int Power(p,b){
+    int result=1;
+    while(p>0){
+        if(p%2==1){
+            result*=b;
+        }
+        b=b*b;
+        p/=2;
+    }
+    return result;
+}
+int main() {
+    int b,p;
+    scanf("%d %d",&p,&b);
+    printf("%d",Power(b,p));
+    return 0;
+}
