@@ -14,7 +14,7 @@ int main()
         sum=sum+arr[i];
     }
     double mean=sum/n;
-    printf("Mean = %lf",mean);
+    printf("Mean = %lf\n",mean);
     int median,temp=0;
     for(int i=0;i<n-1;i++){
         for(int j=i+1;j<n;j++){
@@ -26,23 +26,25 @@ int main()
         }
     }
     if(n%2==0){
-        printf("Median = %lf",(((n/2)+ ((n/2)+1))/2));
+        printf("Median = %lf\n",(((n/2)+ ((n/2)+1))/2));
     }
     else{
-        printf("Median = %lf",((n/2)/2));
+        printf("Median = %lf\n",((n/2)/2));
     }
-    int max=0,maxc=0;
-    for(int i=0;i<n;i++){
-        int c=0;
+    int max=0,c=0,k;
+    for(int i=0;i<n-1;i++){
+        int mode=0;
         for(int j=i+1;j<n;j++){
             if(arr[i]==arr[j]){
                 c++;
             }
-            if(c>maxc){
-                maxc=c;
-                max=arr[i];
-            }
         }
-            printf("%d = %d",max,maxc);
+        if(c>max){
+            max=c;
+            k=arr[i];
+        }
     }
+    printf("Mode = %d",k);
+
+    return 0;
 }
