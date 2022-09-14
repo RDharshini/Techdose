@@ -1,24 +1,11 @@
 #include <stdio.h>
-int main()
-{
-    int  n,m;
-    scanf("%d %d",&n,&m);
-    int arr[n],arr1[m];
-    for(int i=0;i<n;i++){
-        scanf("%d",&arr[i]);
+#include <stdlib.h>
+int* getConcatenation(int* nums, int numsSize, int* returnSize){
+     *returnSize = numsSize*2;
+      int * ans=(int*)malloc(sizeof(int)*(numsSize*2));
+    for(int i=0;i<numsSize;i++){
+        ans[i]=nums[i];
+        ans[i+numsSize]=nums[i];
     }
-    for(int j=0;j<m;j++){
-        scanf("%d",&arr1[j]);
-    }
-    int con[n+m],in=0;
-    for(int i=0;i<n;i++){
-        con[in++]=arr[i];
-    }
-    for(int j=0;j<m;j++){
-        con[in++]=arr1[j];
-    }
-    for(int i=0;i<in;i++){
-        printf("%d ",con[i]);
-    }
-    return 0;
+    return ans;
 }
