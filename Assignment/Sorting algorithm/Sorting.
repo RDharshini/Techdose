@@ -1,22 +1,13 @@
 class Solution {
-public:
-    int maximumGap(vector<int>& nums) {
-        int cnt=0;
-        if(nums.size()==1){
-            cnt=0;
+    public int maximumGap(int[] nums) {
+        int max=0;
+        if (nums.length==1){
+            return max;
         }
-         sort(nums.begin(),nums.end());
-        int i=0;
-        int j=1;
-        int diff;
-        while(j<nums.size()){
-           diff=nums[j]-nums[i];
-            cnt= max(cnt,diff);
-            i++;
-            j++;
-            
-          
+        Arrays.sort(nums);
+        for (int i=0;i<nums.length-1;i++){
+            max=Math.max(max,nums[i+1]-nums[i]);
         }
-        return cnt;
+        return max;
     }
-};
+}
