@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int maximumGap(vector<int>& nums) {
+        int cnt=0;
+        if(nums.size()==1){
+            cnt=0;
+        }
+         sort(nums.begin(),nums.end());
+        int i=0;
+        int j=1;
+        int diff;
+        while(j<nums.size()){
+           diff=nums[j]-nums[i];
+            cnt= max(cnt,diff);
+            i++;
+            j++;
+            
+          
+        }
+        return cnt;
+    }
+};
