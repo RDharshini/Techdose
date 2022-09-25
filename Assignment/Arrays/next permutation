@@ -1,0 +1,36 @@
+class Solution {
+    public void nextPermutation(int[] nums) {
+        int firsIdx=-1;
+        for(int i=nums.length-2;i>=0;i--){
+            if(nums[i]<nums[i+1]){
+                firsIdx=i;
+                break;
+            }
+        }
+        System.out.println(firsIdx);
+        if(firsIdx==-1){
+            reverse(0,nums.length-1,nums);
+            return;
+        }
+        int secIdx=-1;
+         for(int i=nums.length-1;i>=0;i--){
+            if(nums[i]>nums[firsIdx]){
+                secIdx=i;
+                int temp =nums[i];
+                nums[i]=nums[firsIdx];
+                nums[firsIdx]=temp;                    
+                break;
+            }
+        }
+        reverse(firsIdx+1,nums.length-1,nums);
+    }
+    public void reverse(int low,int high,int[] nums){
+          while(low<high){
+            int temp = nums[low];
+            nums[low]=nums[high];
+            nums[high]=temp;
+            high--;
+            low++;
+        }
+    }
+}
