@@ -1,0 +1,16 @@
+class Solution {
+    public double calculateTax(int[][] brackets, int income) {
+        double ans=0.00;
+        double prev=0.00;
+        int i=0;
+        while(income>0){
+            double val=Math.min(brackets[i][0]-prev,income);
+            income-=(int)val;
+            ans+=((double)val * brackets[i][1])/100.0;
+            prev=brackets[i][0];
+            i++;
+        }
+        return ans;
+            
+    }
+}
