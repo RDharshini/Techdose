@@ -1,0 +1,27 @@
+class Solution {
+    public int findClosestNumber(int[] nums) {
+        int min=Integer.MAX_VALUE;
+        int n=nums.length;
+        int diff=0;
+        int ans=0;
+       for(int i=0;i<n;i++){
+           int temp=nums[i];
+           if(temp<0){
+               diff=0-temp;
+           }
+           else{
+               diff=temp-0;
+           }
+           if(diff<min){
+               min=diff;
+               ans=temp;
+           }
+           else if(diff==min){
+               if(ans<temp){
+                   ans=temp;
+               }
+           }
+       }
+        return ans;
+    }
+}
