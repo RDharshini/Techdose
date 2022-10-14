@@ -1,0 +1,18 @@
+class Solution {
+    public boolean areNumbersAscending(String s) {
+       String[] a=s.split(" ");
+        int prev=0;
+        for(String c:a){
+            if(Character.isDigit(c.charAt(0))){
+                int num=Integer.parseInt(c);
+                if(num<=prev){
+                    return false;
+                }
+                else{
+                    prev=num;
+                }
+            }
+        }
+        return true;
+    }
+}
