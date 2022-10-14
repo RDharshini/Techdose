@@ -1,0 +1,15 @@
+class Solution {
+    public int finalValueAfterOperations(String[] o) {
+        //int n = operations.length;
+        int a=0;
+        for(int i=0;i<o.length;i++){
+        if(o[i].contains("--")){
+            a--;
+        }
+            else{
+               a++; 
+        }
+    }
+        return a;
+    }
+}
