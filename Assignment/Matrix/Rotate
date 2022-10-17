@@ -21,6 +21,6 @@ public class Solution {
                     matrix[i][j] = matrix[i][matrix.length-1-j];
                     matrix[i][matrix.length-1-j] = temp;
                 }
-            }
+          }
     }
 }
