@@ -1,0 +1,25 @@
+class Solution {
+    public int specialArray(int[] nums) {
+        int h=nums.length;
+        int l=0;
+        while(l<=h){
+            int m=l+(h-l)/2;
+            int c=0;
+            for(int i=0;i<nums.length;i++){
+                if(nums[i]>=m){
+                    c++;
+                }
+            }
+            if(c==m){
+                return m;
+            }
+            else if(c>m){
+                l=m+1;
+            }
+            else{
+                 h=m-1;
+        }
+        }
+        return -1;
+    }
+}
