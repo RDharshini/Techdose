@@ -1,0 +1,15 @@
+class Solution {
+    public char slowestKey(int[] arr, String keysPressed) {
+        int n=arr.length;
+        int max=arr[0];
+        char c=keysPressed.charAt(0);
+        for(int i=1;i<n;i++){
+            int diff=arr[i]-arr[i-1];
+            if(diff>max ||(diff==max && keysPressed.charAt(i) >c)){
+                max=diff;
+                c=keysPressed.charAt(i);
+            }
+        }
+        return c;
+    }
+}
