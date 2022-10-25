@@ -1,0 +1,25 @@
+class Solution {
+    public int[] fairCandySwap(int[] x, int[] y) {
+        int n=x.length;
+        int m=y.length;
+        int a=0;
+        int b=0;
+        for(int i=0;i<n;i++){
+            a=a+x[i];
+        }
+        for(int i=0;i<m;i++){
+            b=b+y[i];
+        }
+        int[] arr=new int[2];
+        int fiff=(a-b)/2;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(x[i]-y[j]==fiff){
+                    arr[0]=x[i];
+                    arr[1]=y[j];
+                }
+            }
+        }
+        return arr;
+    }
+}
