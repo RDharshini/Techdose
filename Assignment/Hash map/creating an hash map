@@ -1,0 +1,17 @@
+class HashMap{
+   private int[] v=new int[1000001];
+   public hashmap{
+        for(int i=0;i<1000001;++i){
+        v[i]=-1;
+        }
+        }
+   public void put(int key,int val){
+        v[key]=val;
+        }
+   Public void grt(int key){
+        return v[key];
+        }
+    Public remove(int key){
+        v[key]=-1;
+        }
+        }
