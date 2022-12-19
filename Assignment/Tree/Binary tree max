@@ -1,20 +1,16 @@
 class Solution {
-    int res=Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
-     
-        getSiglePathMax(root);
-        return res;
+        solve(root);
+        return sum;
     }
-    
-    private int getSiglePathMax(TreeNode root) {
-        if(root == null){
+    int sum=Integer.MIN_VALUE;
+    public int solve(TreeNode root){
+        if(root==null){
             return 0;
-    }
-        int left = Math.max(0, getSiglePathMax(root.left));
-        int right = Math.max(0, getSiglePathMax(root.right));
-        int curPath = left + right + root.val;
-        res = Math.max(res, curPath);
-        return Math.max(left, right) + root.val;
-    
-    }
+        }
+        int leftt=Math.max(0,solve(root.left));
+        int rightt=Math.max(0,solve(root.right));
+        sum=Math.max(sum,(leftt+rightt+root.val));
+        return root.val + Math.max(leftt,rightt);
+    } 
 }
